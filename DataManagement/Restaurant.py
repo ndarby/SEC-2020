@@ -161,18 +161,18 @@ class Restaurant:
             order1 = self.checkOrders(currTime)
             if order1 is not None:
                 path = self.path[order1[1]]
-                pathVals = self.pathvals[order1[1]]
-                self.robot1.SetOrder(path, pathVals)
+                pathVals = self.pathVals[order1[1]]
+                self.robot1.SetOrder(path, pathVals, self.deliveryPoints)
 
         if status2:
             order2 = self.checkOrders(currTime)
             if order2 is not None:
                 path = self.path[order2[1]]
-                pathVals = self.pathvals[order2[1]]
-                self.robot2.SetOrder(path, pathVals)
+                pathVals = self.pathVals[order2[1]]
+                self.robot2.SetOrder(path, pathVals, self.deliveryPoints)
 
-        self.robot1.Update()
-        self.robot2.Update()
+        self.robot1.Update(currTime)
+        self.robot2.Update(currTime)
 
         self.checkOrders(currTime)
 
