@@ -47,7 +47,7 @@ class Robot:
         Checks if the robot is ready to be assigned an order
         :return: if the robot is ready to accept an order
         """
-        return not self.busy and self.orderDelivered and self.charging
+        return not self.busy
 
     def SetOrder(self, orderPath, orderPathInfo, deliveryPoints):
         """
@@ -80,6 +80,7 @@ class Robot:
                     self.Move(time)
                     if self.charging:
                         self.charging = False
+                        self.busy = True
             else:
                 if self.CheckPathCost() < self.batteryLevel:
                     self.canStartDelivery = True
@@ -104,11 +105,11 @@ class Robot:
         self.distanceTravelled +=1
 
     def AttemptMove(self, time):
-        if self.pathIndex >= len(self.currentPath):
+        if self.pathIndex > len(self.currentPath) - 1:
             self.orderDelivered = True
             self.totalDeliveryPoints += self.currentOrderDeliveryPoints
             self.timeAvailable = time + self.handoverTime
-            self.pathIndex = len(self.currentPath)
+            self.pathIndex = len(self.currentPath) - 1
             return False
         elif self.pathIndex < 0:
             self.orderDelivered = False

@@ -96,6 +96,6 @@ class MainFrame(wx.Frame):
             path = os.path.join(dirname, filename)
             self.restaurant = Restaurant(path)
             self.current_time = 0
-            self.updater.Start(1000)
+            self.updater.Start(100)
 
         dlg.Destroy()
