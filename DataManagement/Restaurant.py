@@ -1,5 +1,5 @@
-from Parser import parse
-from Robot import Robot
+from DataManagement.Parser import parse
+from DataManagement.Robot import Robot
 from collections import deque
 
 
@@ -145,8 +145,7 @@ class Restaurant:
 
         if currTime >= self.newOrders[0][0]:
             order = self.newOrders.pop(0)
-
-        return order
+            return order
 
     def updateMap(self):
 
@@ -179,7 +178,3 @@ class Restaurant:
         currState = []
 
         return textBlock, actions, currState
-
-path = "Input1.txt"
-
-rest = Restaurant(path)

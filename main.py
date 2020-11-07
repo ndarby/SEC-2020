@@ -1,5 +1,3 @@
-#Andrew Test
-
 import wx
 from GUI.MainFrame import MainFrame
 
