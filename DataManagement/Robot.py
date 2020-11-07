@@ -2,7 +2,7 @@ import random
 
 
 class Robot:
-    def __init__(self, PassTime, AccientalWaitTime, HandoverTime, RobotID):
+    def __init__(self, PassTime, AccientalWaitTime, HandoverTime, PosStart, RobotID):
         self.busy = False
         self.orderDelivered = True
         self.charging = True
@@ -15,7 +15,7 @@ class Robot:
         self.pathInfo = []
         self.pathIndex = 1
         self.batteryLevel = 600
-        self.currentPosition = (0, 0)
+        self.currentPosition = PosStart
         self.distanceTravelled = 0
         self.log = "Robot " + RobotID
 

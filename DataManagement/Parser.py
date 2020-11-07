@@ -15,14 +15,13 @@ def parse(filepath):
         i = 0
 
         for line in Lines:
-             map.append(line.strip().split())
-             i+= 1
-             if(i > 8):
+            if i <= 7:
+                map.append(line.strip().split())
+
+            else:
                 orders.append(line.strip().split())
+            i += 1
 
-
-        print(map)
-        print(orders)
 
     averageWaitTime = 0.43 * accidental_wait
     return passtime, accidental_wait, hand_over, delivery_points, map, orders, averageWaitTime
