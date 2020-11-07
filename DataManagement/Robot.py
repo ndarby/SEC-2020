@@ -15,6 +15,7 @@ class Robot:
         self.pathInfo = []
         self.pathIndex = 1
         self.batteryLevel = 600
+        self.totalBatteryUsage = 0
         self.currentPosition = PosStart
         self.distanceTravelled = 0
         self.log = "Robot " + RobotID
@@ -57,6 +58,7 @@ class Robot:
             self.batteryLevel += 10
         else:
             self.batteryLevel -= 2
+            self.totalBatteryUsage += 2
 
     def Move(self, time):
         self.currentPosition = self.currentPath[self.pathIndex]
