@@ -2,14 +2,22 @@ import random
 
 
 class Robot:
-    def __init__(self, PassTime, AccientalWaitTime, HandoverTime, PosStart, RobotID):
+    def __init__(self, PassTime, AccidentalWaitTime, HandoverTime, PosStart, RobotID):
+        """
+        Constructor for the robot class
+        :param PassTime: Constant time to take for each movement
+        :param AccidentalWaitTime: Wait time if robot cannot move on a wait time spot
+        :param HandoverTime: The time the robot needs to be at the table handing the meals to the customers
+        :param PosStart: The starting position of the robot
+        :param RobotID: The ID of the robot
+        """
         self.busy = False
         self.orderDelivered = True
         self.charging = True
         self.canStartDelivery = True
         self.timeAvailable = 0
         self.passTime = PassTime
-        self.accidentalWaitTime = AccientalWaitTime
+        self.accidentalWaitTime = AccidentalWaitTime
         self.handoverTime = HandoverTime
         self.currentPath = []
         self.pathInfo = []
@@ -18,6 +26,8 @@ class Robot:
         self.totalBatteryUsage = 0
         self.currentPosition = PosStart
         self.distanceTravelled = 0
+        self.totalDeliveryPoints = 0
+        self.currentOrderDeliveryPoints = 0
         self.log = "Robot " + RobotID
 
     def CheckPathCost(self):
@@ -34,10 +44,11 @@ class Robot:
     def ReadyForOrder(self):
         return not self.busy and self.orderDelivered and self.charging
 
-    def SetOrder(self, orderPath, orderPathInfo):
+    def SetOrder(self, orderPath, orderPathInfo, deliveryPoints):
         self.currentPath = orderPath
         self.pathInfo = orderPathInfo
         self.pathIndex = 0
+        self.currentOrderDeliveryPoints = deliveryPoints
         self.orderDelivered = False
         self.busy = True
         if self.CheckPathCost() >= self.batteryLevel:
@@ -70,11 +81,11 @@ class Robot:
 
         self.timeAvailable = time + self.passTime
         self.distanceTravelled +=1
-        #implement battery logic here as well
 
     def AttemptMove(self, time):
         if self.pathIndex >= len(self.currentPath):
             self.orderDelivered = True
+            self.totalDeliveryPoints += self.currentOrderDeliveryPoints
             self.timeAvailable = time + self.handoverTime
             self.pathIndex = len(self.currentPath)
             return False
