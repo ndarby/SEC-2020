@@ -11,9 +11,9 @@ class Robot:
         :param PosStart: The starting position of the robot
         :param RobotID: The ID of the robot
         """
-        self.busy = False
-        self.orderDelivered = True
-        self.charging = True
+        self.busy = False   #if the robot has an order this is set to true, if no current order is assigned, false
+        self.orderDelivered = True  #if the order has been delivered
+        self.charging = True    #if the robot is charging
         self.canStartDelivery = True
         self.timeAvailable = 0
         self.passTime = PassTime
@@ -43,9 +43,20 @@ class Robot:
         return totalTime * 4
 
     def ReadyForOrder(self):
+        """
+        Checks if the robot is ready to be assigned an order
+        :return: if the robot is ready to accept an order
+        """
         return not self.busy and self.orderDelivered and self.charging
 
     def SetOrder(self, orderPath, orderPathInfo, deliveryPoints):
+        """
+        Sets the order information for the robot
+        :param orderPath: The path the robot will take
+        :param orderPathInfo: The details of the path (waiting blocks or not)
+        :param deliveryPoints: The amount of delivery points for the order
+        :return: Nothing
+        """
         self.currentPath = orderPath
         self.pathInfo = orderPathInfo
         self.pathIndex = 0
@@ -58,6 +69,11 @@ class Robot:
             self.canStartDelivery = True
 
     def Update(self, time):
+        """
+        Updates the state and position of the robot if applicable
+        :param time: The current time
+        :return: Nothing
+        """
         if self.timeAvailable >= time and self.busy:
             if self.canStartDelivery:
                 if self.AttemptMove(time):
