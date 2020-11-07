@@ -78,12 +78,16 @@ class Robot:
             if self.canStartDelivery:
                 if self.AttemptMove(time):
                     self.Move(time)
+                    if self.charging:
+                        self.charging = False
             else:
                 if self.CheckPathCost() < self.batteryLevel:
                     self.canStartDelivery = True
 
         if self.charging and self.batteryLevel < 600:
             self.batteryLevel += 10
+            if self.batteryLevel > 600:
+                self.batteryLevel = 600
         else:
             self.batteryLevel -= 2
             self.totalBatteryUsage += 2
