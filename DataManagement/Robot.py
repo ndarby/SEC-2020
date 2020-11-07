@@ -74,7 +74,7 @@ class Robot:
         :param time: The current time
         :return: Nothing
         """
-        if self.timeAvailable >= time and self.busy:
+        if self.timeAvailable <= time and self.busy:
             if self.canStartDelivery:
                 if self.AttemptMove(time):
                     self.Move(time)
@@ -106,7 +106,7 @@ class Robot:
             self.timeAvailable = time + self.handoverTime
             self.pathIndex = len(self.currentPath)
             return False
-        elif self.pathIndex <= 0:
+        elif self.pathIndex < 0:
             self.orderDelivered = False
             self.busy = False
             self.charging = True
