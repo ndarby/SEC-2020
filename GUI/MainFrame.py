@@ -11,11 +11,22 @@ class MainFrame(wx.Frame):
         super(MainFrame, self).__init__(None, title='SEC 2020', size=(600, 400))
         self.CreateStatusBar()
 
+        self.log_dis = None
+        self.state_dis = None
+        self.map_dis = None
+        self.time_dis = None
+        self.current_time = 0
+
         self.build_gui()
         self.build_menu()
 
+        self.updater = wx.Timer(self)
+        self.updater.Start(1000)
+        self.Bind(wx.EVT_TIMER, self.update)
+
         self.Centre()
         self.Show()
+        self.test()
 
     def build_gui(self):
         """
@@ -25,18 +36,18 @@ class MainFrame(wx.Frame):
         mid_layout = wx.BoxSizer(wx.HORIZONTAL)
 
         # create panels and widgets
-        log_dis = LogPanel.LogPanel(self)
-        state_dis = StatePanel.StatePanel(self)
-        map_dis = MapPanel.MapPanel(self)
-        time_dis = wx.StaticText(self, label='Current Time: 0s')
+        self.log_dis = LogPanel.LogPanel(self)
+        self.state_dis = StatePanel.StatePanel(self)
+        self.map_dis = MapPanel.MapPanel(self)
+        self.time_dis = wx.StaticText(self, label='Current Time: 0s')
 
         # arrange panels
-        mid_layout.Add(log_dis, 1, wx.EXPAND | wx.ALL, 10)
-        mid_layout.Add(map_dis, 3, wx.EXPAND | wx.ALL, 10)
+        mid_layout.Add(self.log_dis, 1, wx.EXPAND | wx.ALL, 10)
+        mid_layout.Add(self.map_dis, 3, wx.EXPAND | wx.ALL, 10)
 
-        main_layout.Add(time_dis, 0, wx.ALL | wx.ALIGN_CENTER_HORIZONTAL, 10)
+        main_layout.Add(self.time_dis, 0, wx.ALL | wx.ALIGN_CENTER_HORIZONTAL, 10)
         main_layout.Add(mid_layout, 10, wx.EXPAND, 0)
-        main_layout.Add(state_dis, 10, wx.EXPAND | wx.ALL, 10)
+        main_layout.Add(self.state_dis, 5, wx.EXPAND | wx.ALL, 10)
 
         self.SetSizer(main_layout)
 
@@ -53,8 +64,21 @@ class MainFrame(wx.Frame):
         menubar.Append(filemenu, '&File')
         self.SetMenuBar(menubar)
 
-    def run(self):
-        pass
+    def update(self, e):
+        self.time_dis.SetLabel(f'Current Time: {self.current_time}s')
+        self.current_time += 1
+
+    def test(self):
+        self.log_dis.update('robot 1 did such and such'*500)
+        self.map_dis.update("""K 0 0 0 0 0 0 0
+0 0 A 4 0 8 0 12
+A 0 0 0 0 0 A 0
+0 1 0 5 0 9 0 13
+0 0 0 0 0 A 0 0
+0 2 A 6 0 10 0 14
+0 0 0 0 0 0 A 0
+0 3 0 7 0 11 0 15
+""")
 
     def OnLoadFile(self, event):
         dlg = wx.FileDialog(self, "Please choose a .txt file representing your restaurant.", '', '', '*.txt', wx.FD_OPEN)

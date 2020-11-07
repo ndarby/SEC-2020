@@ -14,4 +14,5 @@ class StatePanel(wx.Panel):
         self.textBox = wx.TextCtrl(self, style=wx.TE_MULTILINE | wx.TE_READONLY)
 
         # layout widgets
-        self.layout.Add(self.textBox, 1, wx.ALL, 20)
+        self.layout.Add(self.textBox, 1, wx.ALL | wx.EXPAND, 0)
+        self.SetSizer(self.layout)
