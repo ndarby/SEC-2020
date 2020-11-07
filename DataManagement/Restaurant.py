@@ -146,6 +146,7 @@ class Restaurant:
         if currTime >= self.newOrders[0][0]:
             order = self.newOrders.pop(0)
             return order
+        return None
 
     def updateMap(self):
 
@@ -158,15 +159,17 @@ class Restaurant:
 
         if status1:
             order1 = self.checkOrders(currTime)
-            path = self.path[order1[1]]
-            pathVals = self.pathvals[order1[1]]
-            self.robot1.SetOrder(path, pathVals)
+            if order1 is not None:
+                path = self.path[order1[1]]
+                pathVals = self.pathvals[order1[1]]
+                self.robot1.SetOrder(path, pathVals)
 
         if status2:
             order2 = self.checkOrders(currTime)
-            path = self.path[order2[1]]
-            pathVals = self.pathvals[order2[1]]
-            self.robot2.SetOrder(path, pathVals)
+            if order2 is not None:
+                path = self.path[order2[1]]
+                pathVals = self.pathvals[order2[1]]
+                self.robot2.SetOrder(path, pathVals)
 
         self.robot1.Update()
         self.robot2.Update()

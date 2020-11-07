@@ -28,11 +28,10 @@
   <component name="ChangeListManager">
     <list default="true" id="634613f4-e846-43c9-bc52-954490bad0f5" name="Default Changelist" comment="Added labels and tabs to GUI">
       <change beforePath="$PROJECT_DIR$/.idea/SEC-2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SEC-2020.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataManagement/Restaurant.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataManagement/Restaurant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/MainFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/MainFrame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/StatePanel.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/StatePanel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataManagement/Robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataManagement/Robot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,28 +208,28 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added labels and tabs to GUI" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1604781854709">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state width="2539" height="367" key="GridCell.Tab.0.bottom" timestamp="1604782266814">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="367" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.174.1920.1040@0.0.2560.1400" timestamp="1604780046424" />
+    <state width="2539" height="367" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.174.1920.1040@0.0.2560.1400" timestamp="1604782266814" />
     <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1604781854709" />
     <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1604781783368" />
-    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1604781854708">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state width="2539" height="367" key="GridCell.Tab.0.center" timestamp="1604782266814">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="367" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.174.1920.1040@0.0.2560.1400" timestamp="1604780046424" />
+    <state width="2539" height="367" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.174.1920.1040@0.0.2560.1400" timestamp="1604782266814" />
     <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1604781854708" />
     <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1604781783363" />
-    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1604781854707">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state width="2539" height="367" key="GridCell.Tab.0.left" timestamp="1604782266814">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="367" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.174.1920.1040@0.0.2560.1400" timestamp="1604780046424" />
+    <state width="2539" height="367" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.174.1920.1040@0.0.2560.1400" timestamp="1604782266814" />
     <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1604781854707" />
     <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1604781783361" />
-    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1604781854709">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state width="2539" height="367" key="GridCell.Tab.0.right" timestamp="1604782266814">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="367" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.174.1920.1040@0.0.2560.1400" timestamp="1604780046424" />
+    <state width="2539" height="367" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.174.1920.1040@0.0.2560.1400" timestamp="1604782266814" />
     <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1604781854709" />
     <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1604781783364" />
     <state x="221" y="73" key="SettingsEditor" timestamp="1604762661053">
@@ -252,9 +251,5 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="564" y="311" key="git4idea.ui.GitStashDialog/1920.-269.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1604760992867" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SEC_2020$Restaurant.coverage" NAME="Restaurant Coverage Results" MODIFIED="1604781657550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataManagement" />
-    <SUITE FILE_PATH="coverage/SEC_2020$main.coverage" NAME="main Coverage Results" MODIFIED="1604781854695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
