@@ -1,6 +1,7 @@
+import random
 
 
-class Robot(PassTime, AccientalWaitTime, HandoverTime):
+class Robot:
     def __init__(self, PassTime, AccientalWaitTime, HandoverTime, RobotID):
         self.busy = False
         self.orderDelivered = True
@@ -18,7 +19,6 @@ class Robot(PassTime, AccientalWaitTime, HandoverTime):
         self.distanceTravelled = 0
         self.log = "Robot " + RobotID
 
-
     def CheckPathCost(self):
         """
         Total time is calculated as the return trip time for the robot- the one way trip is multiplied by 2 to get return trip.
@@ -27,7 +27,7 @@ class Robot(PassTime, AccientalWaitTime, HandoverTime):
         :return: Cost in battery life units
         """
         totalTime = len(self.currentPath) * self.passTime
-        totalTime += self.accidentalWaitTime * 0.43 * len(filter(lambda x : x == "A", self.pathInfo))
+        totalTime += self.accidentalWaitTime * 0.43 * len(filter(lambda x: x == "A", self.pathInfo))
         return totalTime * 4
 
     def ReadyForOrder(self):
@@ -44,7 +44,6 @@ class Robot(PassTime, AccientalWaitTime, HandoverTime):
         else:
             self.canStartDelivery = True
 
-
     def Update(self, time):
         if self.timeAvailable >= time and self.busy:
             if self.canStartDelivery:
@@ -60,7 +59,7 @@ class Robot(PassTime, AccientalWaitTime, HandoverTime):
             self.batteryLevel -= 2
 
     def Move(self, time):
-        self.currentPosition = currentPath[self.pathIndex]
+        self.currentPosition = self.currentPath[self.pathIndex]
 
         if not self.orderDelivered:
             self.pathIndex += 1
@@ -70,8 +69,6 @@ class Robot(PassTime, AccientalWaitTime, HandoverTime):
         self.timeAvailable = time + self.passTime
         self.distanceTravelled +=1
         #implement battery logic here as well
-
-
 
     def AttemptMove(self, time):
         if self.pathIndex >= len(self.currentPath):
@@ -86,7 +83,6 @@ class Robot(PassTime, AccientalWaitTime, HandoverTime):
             self.timeAvailable = time
             return False
 
-
         if self.pathInfo[self.pathIndex] == "A":
             return self.Wait()
         else:
@@ -94,7 +90,6 @@ class Robot(PassTime, AccientalWaitTime, HandoverTime):
 
     def Wait(self):
         return random.randint(0, 100) < 30
-
 
     def Log(self, info):
         self.log += ("\n" + info)
