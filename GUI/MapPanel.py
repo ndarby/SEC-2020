@@ -19,3 +19,6 @@ class MapPanel(wx.Panel):
 
     def update(self, map_string):
         self.textBox.SetValue(map_string)
+
+    def clear(self):
+        self.textBox.SetValue('')

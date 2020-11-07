@@ -23,5 +23,11 @@ class LogPanel(wx.Panel):
         layout.Add(notebook, 1, wx.EXPAND, 0)
         self.SetSizer(layout)
 
-    def update(self, actions_text):
-        self.mainLog.AppendText(actions_text)
+    def update(self, actions_text, curr_time):
+        if actions_text:
+            self.mainLog.AppendText(f'{curr_time}: ' + actions_text + '\n')
+
+    def clear(self):
+        self.mainLog.SetValue('')
+        self.robot1Log.SetValue('')
+        self.robot2Log.SetValue('')

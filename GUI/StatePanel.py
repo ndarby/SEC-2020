@@ -21,3 +21,6 @@ class StatePanel(wx.Panel):
 
     def update(self, status_text):
         self.textBox.SetValue(status_text)
+
+    def clear(self):
+        self.textBox.SetValue('')

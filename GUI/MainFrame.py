@@ -27,7 +27,7 @@ class MainFrame(wx.Frame):
 
         self.Centre()
         self.Show()
-        #self.test()
+        self.OnLoadFile(None)
 
     def build_gui(self):
         """
@@ -67,25 +67,30 @@ class MainFrame(wx.Frame):
 
     def update(self, e):
         self.time_dis.SetLabel(f'Current Time: {self.current_time}s')
-        data = self.restaurant.update(self.current_time)
-        print(data)
-        self.current_time += 1
+        actions, state, map_block = self.restaurant.update(self.current_time)
+        self.map_dis.update(map_block)
+        self.log_dis.update(actions, self.current_time)
 
-    def test(self):
-        self.log_dis.update('robot 1 did such and such\n'*500)
-        self.map_dis.update("""K 0 0 0 0 0 0 0
-0 0 A 4 0 8 0 12
-A 0 0 0 0 0 A 0
-0 1 0 5 0 9 0 13
-0 0 0 0 0 A 0 0
-0 2 A 6 0 10 0 14
-0 0 0 0 0 0 A 0
-0 3 0 7 0 11 0 15
-""")
+        state_text = f"Robot 1: {state['robot1state']}"
+        state_text += f", charge: {state['robot1charge']}"
+        state_text += f", total distance travelled: {state['robot1distance']}"
+        state_text += f", total points: {state['robot1points']}"
+
+        state_text += f"\nRobot 2: {state['robot2state']}"
+        state_text += f", charge: {state['robot2charge']}"
+        state_text += f", total distance travelled: {state['robot2distance']}"
+        state_text += f", total points: {state['robot2points']}"
+
+        self.state_dis.update(state_text)
+
+        self.current_time += 1
 
     def OnLoadFile(self, event):
         dlg = wx.FileDialog(self, "Please choose a .txt file representing your restaurant.", '', '', '*.txt', wx.FD_OPEN)
         if dlg.ShowModal() == wx.ID_OK:
+            self.state_dis.clear()
+            self.log_dis.clear()
+            self.map_dis.clear()
             filename = dlg.GetFilename()
             dirname = dlg.GetDirectory()
             path = os.path.join(dirname, filename)
