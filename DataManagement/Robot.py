@@ -39,7 +39,7 @@ class Robot:
         :return: Cost in battery life units
         """
         totalTime = len(self.currentPath) * self.passTime
-        totalTime += self.accidentalWaitTime * 0.43 * len(filter(lambda x: x == "A", self.pathInfo))
+        totalTime += self.accidentalWaitTime * 0.43 * self.pathInfo.count("A")
         return totalTime * 4
 
     def ReadyForOrder(self):

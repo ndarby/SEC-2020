@@ -1,5 +1,6 @@
 from DataManagement.Parser import parse
 from DataManagement.Robot import Robot
+from copy import copy
 from collections import deque
 
 
@@ -49,7 +50,6 @@ class Restaurant:
 
         path = []
         shortest = {self.robot_start: (None, 0)}  # previous, weight
-
         dropoffs = self.get_neighbors(self.table_positions[tableNum])
         current = self.robot_start
         visited = set()
@@ -135,8 +135,9 @@ class Restaurant:
                 if loc not in positions:
                     positions[loc] = [(i, j)]
                 else:
-                    positions[loc] = positions[loc].append((i, j))
+                    positions[loc].append((i, j))
 
+        print(self.table_positions)
         self.table_positions = positions
 
         return
@@ -148,14 +149,49 @@ class Restaurant:
             return order
         return None
 
+    def getRobot1State(self):
+
+        if self.robot1.charging:
+            state = "Robot 1 is charging"
+        elif self.robot1.busy and not self.robot1.orderDelivered:
+            state = "Robot 1 is delivering"
+        else:
+            state = "Robot 1 is returning"
+
+        return state
+
+    def getRobot2State(self):
+
+        if self.robot2.charging:
+            state = "Robot 2 is charging"
+        elif self.robot2.busy and not self.robot1.orderDelivered:
+            state = "Robot 2 is delivering"
+        else:
+            state = "Robot 2 is returning"
+
+        return state
+
     def updateMap(self):
 
-        return
+        pos1 = self.robot1.currentPosition
+        pos2 = self.robot2.currentPosition
+
+        newMap = copy(self.map)
+
+        newMap[pos1[0]][pos1[1]] = "1"
+        newMap[pos2[0]][pos2[1]] = "2"
+
+        if pos1 == pos2:
+            newMap[pos1[0]][pos1[1]] = "12"
+
+        return "\n".join([" ".join(row) for row in newMap])
 
     def update(self, currTime):
 
         status1 = self.robot1.ReadyForOrder()
         status2 = self.robot2.ReadyForOrder()
+
+        actions = ""
 
         if status1:
             order1 = self.checkOrders(currTime)
@@ -163,6 +199,7 @@ class Restaurant:
                 path = self.path[order1[1]]
                 pathVals = self.pathVals[order1[1]]
                 self.robot1.SetOrder(path, pathVals, self.deliveryPoints)
+                actions += "Robot 1 got an order for {}".format(order1[1])
 
         if status2:
             order2 = self.checkOrders(currTime)
@@ -170,14 +207,22 @@ class Restaurant:
                 path = self.path[order2[1]]
                 pathVals = self.pathVals[order2[1]]
                 self.robot2.SetOrder(path, pathVals, self.deliveryPoints)
+                actions += "Robot 2 got an order for {}".format(order2[1])
 
         self.robot1.Update(currTime)
         self.robot2.Update(currTime)
 
         self.checkOrders(currTime)
 
-        textBlock = {}
-        actions = []
-        currState = []
+        state = {
+            "robot1state": self.getRobot1State(),
+            "robot2state": self.getRobot2State(),
+            "robot1charge": self.robot1.batteryLevel,
+            "robot2charge": self.robot2.batteryLevel,
+            "robot1distance": self.robot1.distanceTravelled,
+            "robot2distance": self.robot2.distanceTravelled,
+            "robot1points": self.robot1.totalDeliveryPoints,
+            "robot2points": self.robot2.totalDeliveryPoints
+        }
 
-        return textBlock, actions, currState
+        return actions, state, self.updateMap()
