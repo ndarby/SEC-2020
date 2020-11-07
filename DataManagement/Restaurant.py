@@ -1,6 +1,6 @@
 from DataManagement.Parser import parse
 from DataManagement.Robot import Robot
-from copy import copy
+from copy import deepcopy
 from collections import deque
 
 
@@ -176,13 +176,13 @@ class Restaurant:
         pos1 = self.robot1.currentPosition
         pos2 = self.robot2.currentPosition
 
-        newMap = copy(self.map)
+        newMap = deepcopy(self.map)
 
-        newMap[pos1[0]][pos1[1]] = "1"
-        newMap[pos2[0]][pos2[1]] = "2"
+        newMap[pos1[0]][pos1[1]] = "R"
+        newMap[pos2[0]][pos2[1]] = "r"
 
         if pos1 == pos2:
-            newMap[pos1[0]][pos1[1]] = "12"
+            newMap[pos1[0]][pos1[1]] = "Rr"
 
         return "\n".join([" ".join(row) for row in newMap])
 
@@ -200,6 +200,8 @@ class Restaurant:
                 pathVals = self.pathVals[order1[1]]
                 self.robot1.SetOrder(path, pathVals, self.deliveryPoints)
                 actions += "Robot 1 got an order for {}".format(order1[1])
+                print(self.robot1.currentPath)
+                print(self.robot1.CheckPathCost())
 
         if status2:
             order2 = self.checkOrders(currTime)
@@ -208,6 +210,8 @@ class Restaurant:
                 pathVals = self.pathVals[order2[1]]
                 self.robot2.SetOrder(path, pathVals, self.deliveryPoints)
                 actions += "Robot 2 got an order for {}".format(order2[1])
+                print(self.robot2.currentPath)
+                print(self.robot2.CheckPathCost())
 
         self.robot1.Update(currTime)
         self.robot2.Update(currTime)
@@ -219,10 +223,10 @@ class Restaurant:
             "robot2state": self.getRobot2State(),
             "robot1charge": self.robot1.batteryLevel,
             "robot2charge": self.robot2.batteryLevel,
-            "robot1distance": self.robot1.distanceTravelled,
-            "robot2distance": self.robot2.distanceTravelled,
-            "robot1points": self.robot1.totalDeliveryPoints,
-            "robot2points": self.robot2.totalDeliveryPoints
+            # "robot1distance": self.robot1.distanceTravelled,
+            # "robot2distance": self.robot2.distanceTravelled,
+            # "robot1points": self.robot1.totalDeliveryPoints,
+            # "robot2points": self.robot2.totalDeliveryPoints
         }
 
         return actions, state, self.updateMap()
