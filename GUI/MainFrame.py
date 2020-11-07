@@ -1,6 +1,7 @@
 import wx
 import os
 from GUI import MapPanel, LogPanel, StatePanel
+from DataManagement.Restaurant import Restaurant
 
 
 class MainFrame(wx.Frame):
@@ -16,17 +17,17 @@ class MainFrame(wx.Frame):
         self.map_dis = None
         self.time_dis = None
         self.current_time = 0
+        self.restaurant = None
 
         self.build_gui()
         self.build_menu()
 
         self.updater = wx.Timer(self)
-        self.updater.Start(1000)
         self.Bind(wx.EVT_TIMER, self.update)
 
         self.Centre()
         self.Show()
-        self.test()
+        #self.test()
 
     def build_gui(self):
         """
@@ -66,6 +67,8 @@ class MainFrame(wx.Frame):
 
     def update(self, e):
         self.time_dis.SetLabel(f'Current Time: {self.current_time}s')
+        data = self.restaurant.update(self.current_time)
+        print(data)
         self.current_time += 1
 
     def test(self):
@@ -86,6 +89,8 @@ A 0 0 0 0 0 A 0
             filename = dlg.GetFilename()
             dirname = dlg.GetDirectory()
             path = os.path.join(dirname, filename)
-            # pass path to parser
+            self.restaurant = Restaurant(path)
+            self.current_time = 0
+            self.updater.Start(1000)
 
         dlg.Destroy()

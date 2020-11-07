@@ -31,6 +31,7 @@ class Robot:
         self.log = "Robot " + RobotID
 
     def CheckPathCost(self):
+
         """
         Total time is calculated as the return trip time for the robot- the one way trip is multiplied by 2 to get return trip.
         The amount of time taken to wait is done by calculating how many potential waiting periods and expected number of failed attempts
