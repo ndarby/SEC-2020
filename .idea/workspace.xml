@@ -26,18 +26,24 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="634613f4-e846-43c9-bc52-954490bad0f5" name="Default Changelist" comment="Changed Readme">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="aa001cfb-aea4-4e4b-b651-4dff3ff9d158" name="Default Changelist" comment="Test">
+      <change afterPath="$PROJECT_DIR$/DataManagement/Input1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SEC-2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SEC-2020.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataManagement/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataManagement/Parser.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="main" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="0d0b9496-a2a4-4f82-a57c-10747e08e590" />
+  <component name="JupyterTrust" id="d2b11c4a-db1c-4a0b-a3ed-734584f944b3" />
   <component name="ProjectId" id="1jvmq4DK4FGOq4bb0TolBpWqXNV" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -57,7 +63,29 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Parser">
+    <configuration name="Parser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SEC-2020" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DataManagement" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataManagement/Parser.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SEC-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -82,6 +110,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Parser" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -117,7 +146,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -130,22 +171,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="Changed Readme" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1604766981607">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state x="2334" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604769420218">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2334" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1604769420218" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1604771904659">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1604766981607" />
-    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1604766981605">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1604771904659" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1604771904659">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1604766981605" />
-    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1604766981605">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1604771904659" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1604771904659">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1604766981605" />
-    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1604766981606">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1604771904659" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1604771904659">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1604766981606" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1604771904659" />
     <state x="221" y="73" key="SettingsEditor" timestamp="1604762661053">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
@@ -166,6 +215,7 @@
     <state x="564" y="311" key="git4idea.ui.GitStashDialog/1920.-269.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1604760992867" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SEC_2020$main.coverage" NAME="main Coverage Results" MODIFIED="1604764063118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SEC_2020$main.coverage" NAME="main Coverage Results" MODIFIED="1604769386437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SEC_2020$Parser.coverage" NAME="Parser Coverage Results" MODIFIED="1604771803291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataManagement" />
   </component>
 </project>
