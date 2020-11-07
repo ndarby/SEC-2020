@@ -8,7 +8,7 @@ class MainFrame(wx.Frame):
     Some docstring
     """
     def __init__(self):
-        super(MainFrame, self).__init__(None, title='SEC 2020', size=(600, 400))
+        super(MainFrame, self).__init__(None, title='SEC 2020', size=(1200, 800))
         self.CreateStatusBar()
 
         self.log_dis = None
@@ -69,7 +69,7 @@ class MainFrame(wx.Frame):
         self.current_time += 1
 
     def test(self):
-        self.log_dis.update('robot 1 did such and such'*500)
+        self.log_dis.update('robot 1 did such and such\n'*500)
         self.map_dis.update("""K 0 0 0 0 0 0 0
 0 0 A 4 0 8 0 12
 A 0 0 0 0 0 A 0

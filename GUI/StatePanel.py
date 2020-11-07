@@ -8,11 +8,13 @@ class StatePanel(wx.Panel):
 
     def __init__(self, parent):
         super().__init__(parent=parent)
-        self.layout = wx.BoxSizer(wx.HORIZONTAL)
+        layout = wx.BoxSizer(wx.VERTICAL)
 
         # create widgets
         self.textBox = wx.TextCtrl(self, style=wx.TE_MULTILINE | wx.TE_READONLY)
+        title = wx.StaticText(self, label='Current Stuff')
 
         # layout widgets
-        self.layout.Add(self.textBox, 1, wx.ALL | wx.EXPAND, 0)
-        self.SetSizer(self.layout)
+        layout.Add(title, 0, wx.ALL | wx.ALIGN_CENTER_HORIZONTAL, 5)
+        layout.Add(self.textBox, 1, wx.ALL | wx.EXPAND, 0)
+        self.SetSizer(layout)

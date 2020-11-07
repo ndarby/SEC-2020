@@ -26,7 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="634613f4-e846-43c9-bc52-954490bad0f5" name="Default Changelist" comment="GUI skeleton">
+    <list default="true" id="634613f4-e846-43c9-bc52-954490bad0f5" name="Default Changelist" comment="Basic GUI finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/LogPanel.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/LogPanel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/MainFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/MainFrame.py" afterDir="false" />
@@ -108,7 +108,7 @@
       <workItem from="1604693129031" duration="361000" />
       <workItem from="1604760223518" duration="465000" />
       <workItem from="1604760700161" duration="305000" />
-      <workItem from="1604763002391" duration="6849000" />
+      <workItem from="1604763002391" duration="8969000" />
     </task>
     <task id="LOCAL-00001" summary="Changed Readme">
       <created>1604693227321</created>
@@ -131,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604770732540</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Basic GUI finished">
+      <created>1604773737098</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604773737098</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,42 +173,43 @@
     <MESSAGE value="Changed Readme" />
     <MESSAGE value="Added restaurant class files" />
     <MESSAGE value="GUI skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI skeleton" />
+    <MESSAGE value="Basic GUI finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic GUI finished" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1604773512400">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1604775821067">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1604773512400" />
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1604773495588" />
-    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1604773512398">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1604775821067" />
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1604774758339" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1604775821065">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1604773512398" />
-    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1604773495586" />
-    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1604773512398">
+    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1604775821065" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1604774758338" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1604775821064">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1604773512398" />
-    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1604773495584" />
-    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1604773512399">
+    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1604775821064" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1604774758336" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1604775821066">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1604773512399" />
-    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1604773495587" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1604775821066" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1604774758339" />
     <state x="221" y="73" key="SettingsEditor" timestamp="1604762661053">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
     <state x="221" y="73" key="SettingsEditor/0.23.1440.822@0.23.1440.822" timestamp="1604762661053" />
-    <state x="338" y="168" key="Vcs.Push.Dialog.v2" timestamp="1604770740751">
+    <state x="338" y="168" key="Vcs.Push.Dialog.v2" timestamp="1604773742475">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
-    <state x="338" y="168" key="Vcs.Push.Dialog.v2/0.23.1440.822@0.23.1440.822" timestamp="1604770740751" />
+    <state x="338" y="168" key="Vcs.Push.Dialog.v2/0.23.1440.822@0.23.1440.822" timestamp="1604773742475" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/1920.-269.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1604693434629" />
-    <state x="549" y="348" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604771837794">
+    <state x="549" y="348" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604775813701">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
-    <state x="549" y="348" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.822@0.23.1440.822" timestamp="1604771837794" />
+    <state x="549" y="348" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.822@0.23.1440.822" timestamp="1604775813701" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.-269.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1604761006014" />
     <state x="564" y="311" key="git4idea.ui.GitStashDialog" timestamp="1604760992867">
       <screen x="0" y="0" width="1536" height="824" />
@@ -209,6 +217,6 @@
     <state x="564" y="311" key="git4idea.ui.GitStashDialog/1920.-269.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1604760992867" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SEC_2020$main.coverage" NAME="main Coverage Results" MODIFIED="1604773512387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SEC_2020$main.coverage" NAME="main Coverage Results" MODIFIED="1604774792567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
